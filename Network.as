@@ -16,15 +16,10 @@
 					allNodes[layerN][nodeN] = new Neuron(null);
 				}
 			}
-			//for(layerN = layers-1; layerN >= 0; layerN--)
-			//{
-			//	trace(allNodes[layerN]);
-			//}
 			for(layerN = layers-2; layerN >= 0; layerN--)
 			{
 				for(nodeN = 0; nodeN<nodes; nodeN++)
 				{
-					//trace(layerN);
 					var n:Neuron = allNodes[layerN][nodeN];
 					n.setChildNeurons(allNodes[layerN+1]);
 				}
