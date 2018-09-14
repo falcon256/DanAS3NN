@@ -44,6 +44,18 @@
 			return n.value;
 		}
 		
+		public function tickNetwork():void
+		{
+			for(var x:Number = 0; x < 5; x++)
+			{
+				for(var y:Number = 0; y < 5; y++)
+				{	
+					var ne:Neuron = allNodes[x][y];
+					ne.Tick();
+				}
+			}
+		}
+		
 		public function mutateAndReturnNewNetwork(chanceOfMutation:Number, weightDelta:Number, biasDelta:Number ):Network
 		{
 			var layerN:int = allNodes.length;

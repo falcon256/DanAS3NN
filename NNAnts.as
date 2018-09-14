@@ -1,5 +1,6 @@
 ﻿package  {
 	
+    import flash.utils.getTimer;
 	import flash.display.MovieClip;
 	import Neuron;
 	import Network;
@@ -51,6 +52,16 @@
 					trace(ne.value);
 				}
 			}
+			var tests:int = 100000;
+			var startDate:Date = new Date();
+			var startTime:Number = getTimer();
+			for(var ticks:int = 0; ticks<10000; ticks++)
+			{
+				newNet.tickNetwork();
+			}
+			var endTime:Number = getTimer();
+			trace(((endTime-startTime)/tests)+" ms per 5x5 network tick.");
+			
 		}
 	}
 	
