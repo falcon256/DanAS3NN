@@ -26,12 +26,27 @@
 					trace(ne.value);
 				}
 			}
+			
+			
+			
 			for(x = 0; x < 5; x++)
 			{
 				for(y = 0; y < 5; y++)
 				{
 					n = Networks[0];
 					ne = n.allNodes[x][y];
+					ne.Tick();
+					trace(ne.value);
+				}
+			}
+			
+			trace("Starting second mutated network");
+			var newNet:Network = n.mutateAndReturnNewNetwork(0.1,0.01,0.01);
+			for(x = 0; x < 5; x++)
+			{
+				for(y = 0; y < 5; y++)
+				{	
+					ne = newNet.allNodes[x][y];
 					ne.Tick();
 					trace(ne.value);
 				}
